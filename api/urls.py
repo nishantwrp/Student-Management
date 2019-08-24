@@ -18,5 +18,8 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('',schema_view.with_ui('swagger'), name='schema-swagger-ui'),
     path('predict/',PredictView.as_view()),
+    path('register/',RegisterView.as_view()),
+    path('login/',LoginView.as_view()),
+    path('students/',StudentsGetView.as_view()),
     path('swagger.json', schema_view.without_ui(cache_timeout=0), name='schema-json'), 
 ] 

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'api',
     'drf_yasg',
     'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -58,7 +59,6 @@ ROOT_URLCONF = 'studentmanagement.urls'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
-        # 'rest_framework.authentication.BasicAuthentication',
     )
 }
 
