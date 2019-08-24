@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1 align='center' style="padding-top: 70px;">LOGIN</h1>
+  <div style='margin: auto; width:400px;'>
+    <form method="post" action="#">
+      <div class="row gtr-uniform">
+        <div class="col-12">
+          <input type="email" name="email" id="email" value="" placeholder="Email" />
+        </div>
+        <div class="col-12">
+          <input type="password" name="password" id="password" value="" placeholder="Password" />
+        </div>
+        <div style="margin: auto;">
+        <div class="col-12"style=" width: 100px;" >
+          <input type="submit" value="Log In" class="primary" />
+        </div>
+        </div>
+      </div>
+    </form>
+  </div>
+{% endblock %}
