@@ -32,9 +32,13 @@
 						</section>
 					</div>
 					<div class="copyright">
-						&copy; Nishantwrp Corporation</a>.
+						&copy; Sample Corporation</a>.
 					</div>
 				</div>
 			</footer>
-
+<script>
+  if (localStorage.getItem("loggedIn") === "true") {
+				window.location.replace("/dashboard?token="+ localStorage.getItem("token"));
+			}
+</script>
 	{% endblock %}

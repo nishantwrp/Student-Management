@@ -3,166 +3,106 @@
 {% block content %}
 		<!-- Heading -->
 			<div id="heading" >
-				<h1>Elements</h1>
+				<h1>Details of All Students</h1>
 			</div>
 
 		<!-- Main -->
 			<section id="main" class="wrapper">
 				<div class="inner">
-					<div class="content">
+					<div class="row">
+						<div class="col-7">
+							
+						</div>
+						<div class="col-2">
+								<div id="alignright2">
+										<ul class="actions">
+												<li><a href="#" class="button primary">Add Class</a></li>
+											</ul>
+								</div>
+						</div>
+						<div class="col-3">
+								<div id="alignright2">
+										<ul class="actions">
+												<li><a href="add/?token={{token}}" class="button primary">Add Students</a></li>
+											</ul>
+								</div>
+						</div>
+					</div>
+					<div class="content" id="studentsdetails">
 
 					<!-- Elements -->
 						<div class="row">
-							<div class="col-12 col-12-medium">
+							<div id = "app" class="col-12 col-12-medium">
 
 								<!-- Table -->
-									<h3>Table</h3>
-									<h4>Default</h4>
+									<h3>Predictions :- </h3>
+									<!--<h4>Default</h4>-->
 									<div class="table-wrapper">
 										<table>
 											<thead>
 												<tr>
+													<th>ID</th>
 													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
+													<th>Prediction</th>
+													<th>Link</th>
 												</tr>
 											</thead>
 											<tbody>
+											{% for student in students %}
+											{% if student.prediction_score == 0 %}
 												<tr style="color: red;">
-													<td>Alpha</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>10.00</td>
+													<td>{{ student.id }}</td>
+													<td>{{ student.name }}</td>
+													<td>AVERAGE PERMORMER</td>
+													<td><a href="{{ student.id }}">Click here to see profile</a></td>
 												</tr>
+											{% elif student.prediction_score == 1 %}
+												<tr style="color: orange;">
+													<td>{{ student.id }}</td>
+													<td>{{ student.name }}</td>
+													<td>GOOD PERMORMER</td>
+													<td><a href="{{ student.id }}">Click here to see profile</a></td>
+												</tr>
+											{% elif student.prediction_score == 2 %}
 												<tr style="color: green;">
-													<td>Beta</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>20.00</td>
+													<td>{{ student.id }}</td>
+													<td>{{ student.name }}</td>
+													<td>EXCELLENT PERMORMER</td>
+													<td><a href="{{ student.id }}">Click here to see profile</a></td>
 												</tr>
-												<tr style="color:orange">
-													<td>Gamma</td>
-													<td>Morbi faucibus arcu accumsan lorem.</td>
-													<td>30.00</td>
-												</tr>
-												<tr>
-													<td>Delta</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>40.00</td>
-												</tr>
-												<tr>
-													<td>Epsilon</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>50.00</td>
-												</tr>
-												<tr>
-													<td>Zeta</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>60.00</td>
-												</tr>
-												<tr>
-													<td>Eta</td>
-													<td>Morbi faucibus arcu accumsan lorem.</td>
-													<td>70.00</td>
-												</tr>
-												<tr>
-													<td>Theta</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>80.00</td>
-												</tr>
+											{% endif %}
+											{% endfor %}
+											
 											</tbody>
-											<tfoot>
+											<!--<tfoot>
 												<tr>
 													<td colspan="2"></td>
-													<td>360.00</td>
+													<td>100.00</td>
 												</tr>
 											</tfoot>
-										</table>
-									</div>
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Alpha</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>10.00</td>
-												</tr>
-												<tr>
-													<td>Beta</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>20.00</td>
-												</tr>
-												<tr>
-													<td>Gamma</td>
-													<td>Morbi faucibus arcu accumsan lorem.</td>
-													<td>30.00</td>
-												</tr>
-												<tr>
-													<td>Delta</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>40.00</td>
-												</tr>
-												<tr>
-													<td>Epsilon</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>50.00</td>
-												</tr>
-												<tr>
-													<td>Zeta</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>60.00</td>
-												</tr>
-												<tr>
-													<td>Eta</td>
-													<td>Morbi faucibus arcu accumsan lorem.</td>
-													<td>70.00</td>
-												</tr>
-												<tr>
-													<td>Theta</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>80.00</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>360.00</td>
-												</tr>
-											</tfoot>
+										-->
 										</table>
 									</div>
 
 							</div>
 						</div>
+
 					</div>
+
+					
 				</div>
 			</section>
 
 		<!-- Footer -->
-			<footer id="footer">
+		<footer id="footer">
 				<div class="inner">
 					<div class="content">
 						<section>
-							<h3>Accumsan montes viverra</h3>
-							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing. Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing sed feugiat eu faucibus. Integer ac sed amet praesent. Nunc lacinia ante nunc ac gravida.</p>
+							<h3>About Us</h3>
+							<p>This portal keeps tracks of all data of student provided by his mentor such as his interactive skills, his problem solving abilities and many others.These models created by each of the algorithms are used to create an output for each of the student.This output predict the academic result of the student.</p>
 						</section>
 						<section>
-							<h4>Sem turpis amet semper</h4>
-							<ul class="alt">
-								<li><a href="#">Dolor pulvinar sed etiam.</a></li>
-								<li><a href="#">Etiam vel lorem sed amet.</a></li>
-								<li><a href="#">Felis enim feugiat viverra.</a></li>
-								<li><a href="#">Dolor pulvinar magna etiam.</a></li>
-							</ul>
-						</section>
-						<section>
-							<h4>Magna sed ipsum</h4>
+							<h4>Contact Us</h4>
 							<ul class="plain">
 								<li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
 								<li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
@@ -172,8 +112,9 @@
 						</section>
 					</div>
 					<div class="copyright">
-						&copy; Untitled. Photos <a href="https://unsplash.co">Unsplash</a>, Video <a href="https://coverr.co">Coverr</a>.
+						&copy; Sample Corporation</a>.
 					</div>
 				</div>
+				
 			</footer>
 		{% endblock %}

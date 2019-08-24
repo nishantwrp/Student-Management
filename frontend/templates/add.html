@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+		<!-- Heading -->
+			<div id="heading" >
+				<h1>Manage Students</h1>
+			</div>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<div class="row">
+						<div class="col-2">
+								<div id="alignright2">
+										<ul class="actions">
+												<li><a href="/dashboard" class="button primary">Go back</a></li>
+											</ul>
+								</div>
+						</div>
+					</div>
+			
+
+					<div class="content" id="addstudent">
+							<h2 align='center' style="padding-top: 70px;">Add a student:</h2>
+							<div style='margin: auto; width:400px;'>
+								<div class="row gtr-uniform">
+								  <div class="col-12">
+									<input type="text" name="name" id="name" value="" placeholder="Name" />
+                                  </div>
+                                 <div class="col-12">
+                                        <select id = "school" >
+                                                <option value=0>Class 1-4</option>
+                                                <option value=1>Class 5-8</option>
+                                                <option value=2>Class 9-12</option>
+                                              </select> 
+                                 </div>
+								  <div style="margin: auto;">
+								  <div class="col-12"style=" width: 100px;" >
+									<input onclick="add()" type="submit" value="Submit" class="primary" />
+								  </div>
+								  </div>
+								</div>
+						
+							</div>
+					</div>
+				</div>
+			</section>
+<script>
+    function add() {
+        name = document.getElementById('name').value;
+        school_level = document.getElementById('school').value;
+        $.ajax({
+          url: "/api/students/",
+          method: "POST",
+          headers: {
+              'Authorization': 'Token ' + localStorage.getItem("token")
+          },
+          data: {
+            "name": name,
+            "school_level": school_level,
+            "attended_classes": 0,
+            "total_classes": 0,
+            "discussion_score": 0,
+            "prediction_score": 2
+          },
+          success: function(data, status, xhr) {
+            if (data["message"] == "success") {
+              window.location.replace("/dashboard");
+            }
+          },
+          error: function(xhr, status, err) {
+            iziToast.error({
+            title: 'Error',
+            position: 'bottomCenter',
+            message: 'Please fill all the fields'
+            });
+          }
+        });
+    }
+</script>
+		<!-- Footer -->
+		<footer id="footer">
+				<div class="inner">
+					<div class="content">
+						<section>
+							<h3>About Us</h3>
+							<p>This portal keeps tracks of all data of student provided by his mentor such as his interactive skills, his problem solving abilities and many others.These models created by each of the algorithms are used to create an output for each of the student.This output predict the academic result of the student.</p>
+						</section>
+						<section>
+							<h4>Contact Us</h4>
+							<ul class="plain">
+								<li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+								<li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+								<li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+								<li><a href="#"><i class="icon fa-github">&nbsp;</i>Github</a></li>
+							</ul>
+						</section>
+					</div>
+					<div class="copyright">
+						&copy; Sample Corporation</a>.
+					</div>
+				</div>
+				
+			</footer>
+		{% endblock %}

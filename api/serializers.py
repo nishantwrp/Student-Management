@@ -22,7 +22,7 @@ class PredictSerializer(serializers.Serializer):
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = student
-        fields = ('name','school_level','attended_classes','total_classes','discussion_score','prediction_score')
+        fields = ('id','name','school_level','attended_classes','total_classes','discussion_score','prediction_score')
 
 class RegisterSerializer(serializers.Serializer):
     username = serializers.CharField(max_length=100)

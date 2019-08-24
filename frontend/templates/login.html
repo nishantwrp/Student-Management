@@ -23,7 +23,7 @@
       </div>
       <script>
         if (localStorage.getItem("loggedIn") === "true") {
-              window.location.replace("/dashboard");
+              window.location.replace("/dashboard?token="+localStorage.getItem("token"));
             }
         </script>
       <script>
