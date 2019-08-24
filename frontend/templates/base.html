@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+	Industrious by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Student Progress Analyser</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css">
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<style>
+		.hideit {
+			display:none !important; 
+		}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a class="logo" href="/">SPA</a>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="/">Home</a></li>
+					<li><a id = "register" href="/register">Register</a></li>
+					<li><a id = "login" href="/login">Login</a></li>
+					<li><a id = "dashboard" class = "hideit" href="/dashboard">Dashboard</a></li>
+					<li><a onclick="logout()" id = "logout" class = "hideit" href="#">Logout</a></li>
+				</ul>
+            </nav>
+            
+            {% block content %}
+            {% endblock %}
+			<script>
+			if (localStorage.getItem("loggedIn") === "true") {
+				document.getElementById('dashboard').classList.remove("hideit");
+				document.getElementById('logout').classList.remove("hideit");
+				document.getElementById('login').classList.add("hideit");
+				document.getElementById('register').classList.add("hideit");
+			}
+			</script>
+			<script>
+			function logout() {
+				localStorage.removeItem("loggedIn");
+				localStorage.removeItem("token");
+				localStorage.removeItem("email");
+				window.location.replace("/");
+			}
+			</script>
+		<!-- Scripts -->
+		 <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js" type="text/javascript"></script>
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
+
+	</body>
+</html>

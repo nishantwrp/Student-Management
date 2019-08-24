@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1 align='center' style="padding-top: 70px;">LOGIN</h1>
+{% if registered == True %}
+  <center>
+  Successfully registered. Now enter the credentials to login.
+  </center>
+      {% endif %}
+  <div style='margin: auto; width:400px;'>
+      <div class="row gtr-uniform">
+        <div class="col-12">
+          <input type="email" name="email" id="email" value="" placeholder="Email" />
+        </div>
+        <div class="col-12">
+          <input type="password" name="password" id="password" value="" placeholder="Password" />
+        </div>
+        <div style="margin: auto;">
+        <div class="col-12"style=" width: 100px;" >
+          <input type="submit" onclick="login()" value="Log In" class="primary" />
+        </div>
+        </div>
+      </div>
+      <script>
+        if (localStorage.getItem("loggedIn") === "true") {
+              window.location.replace("/dashboard");
+            }
+        </script>
+      <script>
+      function login() {
+        email = document.getElementById('email').value
+        password = document.getElementById('password').value
+        $.ajax({
+          url: "/api/login/",
+          method: "POST",
+          data: {
+            'username': email,
+            'password': password,
+          },
+          success: function(data, status, xhr) {
+            localStorage.setItem('loggedIn','true');
+            localStorage.setItem('token',data['message']);
+            localStorage.setItem('email',email);
+            window.location.replace("/dashboard");
+          },
+          error: function(xhr, status, err) {
+            iziToast.error({
+            title: 'Error',
+            position: 'bottomCenter',
+            message: 'Invalid Credentials'
+            });
+          }
+        });
+      }
+      </script>
+  </div>
+{% endblock %}
