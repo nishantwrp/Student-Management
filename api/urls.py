@@ -21,5 +21,7 @@ urlpatterns = [
     path('register/',RegisterView.as_view()),
     path('login/',LoginView.as_view()),
     path('students/',StudentsGetView.as_view()),
+    path('students/delete/',DeleteStudentView.as_view()),
+    path('students/update/',UpdateStudentView.as_view()),
     path('swagger.json', schema_view.without_ui(cache_timeout=0), name='schema-json'), 
 ] 

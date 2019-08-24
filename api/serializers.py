@@ -57,6 +57,13 @@ class LoginSerializer(serializers.Serializer):
         token, created = Token.objects.get_or_create(user=user)
         return token
 
+class DeleteStudentSerializer(serializers.Serializer):
+    sid = serializers.IntegerField()
+
+class UpdateStudentSerializer(serializers.Serializer):
+    sid = serializers.IntegerField()
+    sval = serializers.IntegerField()
+
 class ResponseSerializer(serializers.Serializer):
     message = serializers.CharField(max_length=500)
 

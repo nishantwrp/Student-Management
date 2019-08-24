@@ -4,7 +4,8 @@ urlpatterns = [
     path('',indexView),
     path('dashboard/',elementsView),
     path('dashboard/add/',addView),
-    path('generic/',genView),
     path('login/',loginView),
     path('register/',registerView),
+    path('dashboard/<int:pk>/',studentDetailsView),
+    path('dashboard/class/',enterMarksView),
 ]

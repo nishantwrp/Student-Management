@@ -16,7 +16,7 @@
 						<div class="col-2">
 								<div id="alignright2">
 										<ul class="actions">
-												<li><a href="#" class="button primary">Add Class</a></li>
+												<li><a href="/dashboard/class/?token={{token}}" class="button primary">Add Class</a></li>
 											</ul>
 								</div>
 						</div>
@@ -54,21 +54,21 @@
 													<td>{{ student.id }}</td>
 													<td>{{ student.name }}</td>
 													<td>AVERAGE PERMORMER</td>
-													<td><a href="{{ student.id }}">Click here to see profile</a></td>
+													<td><a href="{{ student.id }}/?token={{token}}">Click here to see profile</a></td>
 												</tr>
 											{% elif student.prediction_score == 1 %}
 												<tr style="color: orange;">
 													<td>{{ student.id }}</td>
 													<td>{{ student.name }}</td>
 													<td>GOOD PERMORMER</td>
-													<td><a href="{{ student.id }}">Click here to see profile</a></td>
+													<td><a href="{{ student.id }}/?token={{token}}">Click here to see profile</a></td>
 												</tr>
 											{% elif student.prediction_score == 2 %}
 												<tr style="color: green;">
 													<td>{{ student.id }}</td>
 													<td>{{ student.name }}</td>
 													<td>EXCELLENT PERMORMER</td>
-													<td><a href="{{ student.id }}">Click here to see profile</a></td>
+													<td><a href="{{ student.id }}/?token={{token}}">Click here to see profile</a></td>
 												</tr>
 											{% endif %}
 											{% endfor %}
