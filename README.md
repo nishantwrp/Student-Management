@@ -17,7 +17,8 @@
 
 ----
 ## Deployment
-The app is deployed on heroku - [Link](https://nishantwrp.herokuapp.com/)
+- The app is deployed on heroku - [Link](https://nishantwrp.herokuapp.com/)
+- We also tried to deploy the app on aws EC2 machine with link - [http://172.31.87.87:8000/](http://172.31.87.87:8000/) 
 
 ----
 ## Machine Learning
@@ -36,6 +37,10 @@ The app is deployed on heroku - [Link](https://nishantwrp.herokuapp.com/)
 ----
 ## Acknowledgements
 - [Izitoast Library](http://izitoast.marcelodolza.com/)
+
+----
+## Tracks
+> Nuture The Future
 
 ----
 ## Screenshots
