@@ -13,7 +13,7 @@ def elementsView(request):
     headers = {
         'Authorization': 'Token ' + request.GET['token']
     }
-    r = requests.get('http://127.0.0.1:8000/api/students/',headers=headers)
+    r = requests.get('https://nishantwrp.herokuapp.com/api/students/',headers=headers)
     context['students'] = r.json()
     context['token'] = request.GET['token']
     return render(request,'elements.html',context=context)
@@ -25,7 +25,7 @@ def studentDetailsView(request,pk):
     headers = {
         'Authorization': 'Token ' + request.GET['token']
     }
-    r = requests.get('http://127.0.0.1:8000/api/students/',headers=headers)
+    r = requests.get('https://nishantwrp.herokuapp.com/api/students/',headers=headers)
     for obj in r.json():
         if obj['id'] == pk:
             context['student'] = obj
@@ -39,7 +39,7 @@ def enterMarksView(request):
     headers = {
         'Authorization': 'Token ' + request.GET['token']
     }
-    r = requests.get('http://127.0.0.1:8000/api/students/',headers=headers)
+    r = requests.get('https://nishantwrp.herokuapp.com/api/students/',headers=headers)
     context['students'] = r.json()
     context['token'] = request.GET['token']
     context['length'] = len(r.json())
