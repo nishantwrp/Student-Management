@@ -1,6 +1,12 @@
 # Student Progress Analyzer
 
 ----
+## Lazy Coders
+- [Nishant Mittal](https://www.github.com/nishantwrp)
+- [Prakhar Dwivedi](https://www.github.com/meowmeow321)
+- [Mudit Bhardwaj](https://www.github.com/muditbhardwaj195)
+
+----
 ## About
 
 >Student Progress Analyzer is an application built for teachers to track progress of their students and predict the performance of the students in upcoming exams. The application keeps track of the student's attendance and their participation in the interactive activities happening in the classroom and using this information, it predicts with about 80% accuracy how the students will perform in the forecoming examinations. It is powered by a machine learning model trained with SVM on a data-set of similar data.
