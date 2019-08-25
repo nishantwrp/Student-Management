@@ -11,7 +11,7 @@
 
 ----
 ## Deployment
-- 
+The app is deployed on heroku - [Link](https://nishantwrp.herokuapp.com/)
 
 ----
 ## Machine Learning
