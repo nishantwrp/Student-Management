@@ -36,3 +36,18 @@ The app is deployed on heroku - [Link](https://nishantwrp.herokuapp.com/)
 ----
 ## Acknowledgements
 - [Izitoast Library](http://izitoast.marcelodolza.com/)
+
+----
+## Screenshots
+
+![img](https://res.cloudinary.com/nishantwrp/image/upload/v1566707394/Screenshot_from_2019-08-25_09-53-14.png)
+![img](https://res.cloudinary.com/nishantwrp/image/upload/v1566707393/Screenshot_from_2019-08-25_09-53-40.png)
+![img](https://res.cloudinary.com/nishantwrp/image/upload/v1566707393/Screenshot_from_2019-08-25_09-55-17.png)
+![img](https://res.cloudinary.com/nishantwrp/image/upload/v1566707392/Screenshot_from_2019-08-25_09-56-08.png)
+![img](https://res.cloudinary.com/nishantwrp/image/upload/v1566707392/Screenshot_from_2019-08-25_09-54-35.png)
+![img](https://res.cloudinary.com/nishantwrp/image/upload/v1566707392/Screenshot_from_2019-08-25_09-55-01.png)
+
+----
+## Rest Api
+
+![img](https://res.cloudinary.com/nishantwrp/image/upload/v1566707688/Screenshot_from_2019-08-25_10-03-24.png)
