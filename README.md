@@ -16,11 +16,6 @@
 >Our application has a very intuitive and simple UI. On the home page, we provide options for login and signup. Once the teacher has created an account and they login, they are redirected to the progress tracking page where they are greeted with a table which shows a list of their student's names along with the prediction of the student's performance in upcoming tests based on currently available data. They can also access the detail page of a particular student by clicking on that student's entry in the table. The students are classified into three categories: average performance, good performance and excellent performance. On the progress tracking page, teachers have the option to add new students and delete older ones. They also have the option to update data of all the students after they have taken a class.
 
 ----
-## Deployment
-- The app is deployed on heroku - [Link](https://nishantwrp.herokuapp.com/)
-- We also tried to deploy the app on aws EC2 machine with link - [http://172.31.87.87:8000/](http://172.31.87.87:8000/) 
-
-----
 ## Machine Learning
 - Dataset used - [Link](https://github.com/nishantwrp/Student-Management/blob/master/machine_learning/final_dataset.csv)
 - Machine Learning Code - [Link](https://github.com/nishantwrp/Student-Management/blob/master/machine_learning/ml.py)
