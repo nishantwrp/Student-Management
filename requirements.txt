@@ -4,7 +4,7 @@ chardet==3.0.4
 coreapi==2.3.3
 coreschema==0.0.4
 dj-database-url==0.5.0
-Django==2.2.18
+Django==2.2.20
 django-heroku==0.3.1
 django-rest-framework==0.1.0
 djangorestframework==3.10.2
